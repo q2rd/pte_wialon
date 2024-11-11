@@ -1,4 +1,5 @@
 from pydantic import BaseModel
 
-class VehicleDB(BaseModel):
-    ...
+
+class VehicleDBResponse(BaseModel):
+    wialon_id: int

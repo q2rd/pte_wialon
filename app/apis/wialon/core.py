@@ -74,6 +74,8 @@ class CustomWialon(Wialon):
             "timeTo": time_to,
             "flags": 0x0000, # включить все данные в ответ
             "flagsMask": 0xFF00, # по доке не пон что это, но надо так же как выше.
-            "loadCount": 10000, # количество сообщений, которое нужно включить в ответ.
+            "loadCount": 0XFFFFFFFF, # Количество сообщений, которое нужно включить в ответ. 0xffffffff
         }
-        return read_json(self.messages_load_interval(**params).get("messages"))
+        data = self.messages_load_interval(**params)
+        # print(data)
+        return read_json(data.get("messages"))
