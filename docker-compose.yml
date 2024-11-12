@@ -1,0 +1,11 @@
+services:
+  cord_pte:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: cord_pte
+    ports:
+      - "8980:8000"
+    volumes:
+      - .:/app
+    env_file: .env
